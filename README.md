@@ -11,10 +11,10 @@ I work with git on a lot of different systems - Mac, Windows, Linux, personal, c
 1. Clone this repo the desired location on the system I am working on.
 2. Add the below [Include] section, pointing to the .gitconfig-alias file in the cloned repo.
 
-### The [Include] section
+### The [Include] section (on my Windows PC)
 ```
 [include]
-  path = <path/to/my/partial/file/.gitconfig-alias>
+  path = "~///repos//gitconfigs//.gitconfig-alias"
 ```
 
 
