@@ -18,9 +18,9 @@ I work with git on a lot of different systems - Mac, Windows, Linux, personal, c
 ```
 
 ## and on my Windows "Parallels" version on my Mac where I have Dropbox installed;
-'''
+```
 [include]
   path = "\\\\Mac\\Dropbox\\GitConfigs\\.gitconfig-alias"
-'''
+```
 
 
