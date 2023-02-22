@@ -11,13 +11,13 @@ I work with git on a lot of different systems - Mac, Windows, Linux, personal, c
 1. Clone this repo the desired location on the system I am working on.
 2. Add the below [Include] section to my global .gitconfig, pointing to the .gitconfig-alias file in the cloned repo.
 
-## The [Include] section on a Windows PC where I needed to clone this repo;
+#### The [Include] section on a Windows PC where I needed to clone this repo;
 ```
 [include]
   path = "~///repos//gitconfigs//.gitconfig-alias"
 ```
 
-## and on my Windows "Parallels" version on my Mac where I have Dropbox installed;
+#### and on my Windows "Parallels" version on my Mac where I have Dropbox installed;
 ```
 [include]
   path = "\\\\Mac\\Dropbox\\GitConfigs\\.gitconfig-alias"
