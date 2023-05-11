@@ -10,6 +10,7 @@
     f = fetch
     l = log --graph --pretty=format:'%C(yellow)%h%x09%Creset%C(cyan)%C(bold)%ad%Creset  %C(green)%Creset %s' --date=short --oneline
     ll = log --stat --no-merges # add -n for the last n commits only
+    lt = "!git l -10"
     nb = checkout -b
     p = pull
     pt = push origin --follow-tags
@@ -22,6 +23,7 @@
     ss = status
     st = stash -u # -u include untracked files
     sw = switch
+    swc = switch -c
     swnb = switch -c 
     t = tag
     ta = "!f() { git tag -a $1 -m /"$1/"; }; f"
