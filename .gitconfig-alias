@@ -8,7 +8,7 @@
     c = commit -m
     chuck = "!git clean --force -d -x && git reset --hard"
     f = fetch
-    l = log --graph --pretty=format:'%C(yellow)%h%x09%Creset%C(cyan)%C(bold)%ad%Creset  %C(green)%Creset %s' --date=short --oneline
+    l = log --graph --pretty=format:'%C(yellow)%h %C(cyan)%C(bold)%ad %C(green)%an %Creset%s' --date=short
     ll = log --stat --no-merges # add -n for the last n commits only
     lt = "!git l -10"
     nb = checkout -b
