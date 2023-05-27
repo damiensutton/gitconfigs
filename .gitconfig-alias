@@ -1,3 +1,9 @@
+# Linux/Mac add symlink
+# ln -s /Users/damiensutton/Development/gitconfigs/.gitconfig-alias ~/.gitconfig-alias
+
+# Windows add symlink (Powershell)
+# New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.gitconfig-alias" -Target "W:\Development\gitconfigs\.gitconfig-alias"
+
 [alias]
     a = add
     ac = "!git add -A && git commit -m"
