@@ -13,6 +13,8 @@
     bls = branch -a
     c = commit -m
     chuck = "!git clean --force -d -x && git reset --hard"
+    co = checkout
+    cod = checkout .
     f = fetch
     l = log --graph --decorate --all --pretty=format:'%C(yellow)%h %C(cyan)%C(bold)%ad %C(green)%an%C(auto)%d %Creset%s' --date=short
     ll = log --stat --no-merges # add -n for the last n commits only
@@ -22,6 +24,7 @@
     p = pull
     pt = push origin --follow-tags
     rank = shortlog -sn --no-merges
+    rh = reset HEAD
     rv = remote -v
     s = status -s
     se = "!git rev-list --all | xargs git grep -F"
