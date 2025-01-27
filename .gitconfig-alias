@@ -13,8 +13,8 @@
     bd = branch -d # Delete a branch   
     bls = branch -a  # List all branches, including remote ones    
     c = commit -m # Commit with a message    
-    clean-b = "!sh -c 'git branch --merged | grep -vE \"^\\*|dev|main|release|master|development|develop\" | grep -v \"${1:-^$}\" | xargs -I {} git branch -d {}' -"
-    clean-b-check = "!sh -c 'git branch --merged | grep -vE \"^\\*|dev|main|release|master|development|develop\" | grep -v \"${1:-^$}\" | xargs -I {} echo {}' -"
+    clean-b = "!sh -c 'git branch --merged | grep -vE \"^\\*|dev|staging|main|release|master|development|develop\" | grep -v \"${1:-^$}\" | xargs -I {} git branch -d {}' -"
+    clean-b-check = "!sh -c 'git branch --merged | grep -vE \"^\\*|dev|staging|main|release|master|development|develop\" | grep -v \"${1:-^$}\" | xargs -I {} echo {}' -"
     co = checkout  # Switch branches or restore files    
     cod = checkout . # Discard all changes in the working directory    
     f = fetch # Fetch updates from the remote repository    
