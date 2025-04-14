@@ -44,5 +44,10 @@
     pub = "publish" # Publish the current branch to origin and track it    
     publish = "!git push -u origin $(git branch-name)" # Publish the current branch to origin (detailed command)    
     branch-name = "!git rev-parse --abbrev-ref HEAD" # Show the current branch name
+    wtl = worktree list      # List all worktrees
+    wta = worktree add       # Add a new worktree
+    wtr = worktree remove    # Remove a worktree
+    wts = worktree prune     # Prune old worktrees
+    wtu = worktree update    # Update worktrees
 
 
