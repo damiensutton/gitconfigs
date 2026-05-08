@@ -52,5 +52,7 @@
     wtr = worktree remove    # Remove a worktree
     wts = worktree prune     # Prune old worktrees
     wtu = worktree update    # Update worktrees
+    # Create a new worktree as a sibling of the current repo, named <repo>.<suffix>, with a new branch off current HEAD. Branch name defaults to suffix; pass a second arg to override (e.g. git wtn BCDEV-456 feature/BCDEV-456).
+    wtn = "!f() { if [ -z \"$1\" ]; then echo \"Usage: git wtn <folder-suffix> [branch-name]\"; return 1; fi; root=$(git rev-parse --show-toplevel) || return 1; parent=$(dirname \"$root\"); name=$(basename \"$root\"); new_path=\"$parent/$name.$1\"; branch=\"${2:-$1}\"; git worktree add -b \"$branch\" \"$new_path\" && echo \"Worktree created: $new_path (branch: $branch)\"; }; f"
 
 
