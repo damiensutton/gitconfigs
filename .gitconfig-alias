@@ -13,8 +13,10 @@
     bd = branch -d # Delete a branch   
     bls = branch -a  # List all branches, including remote ones    
     c = commit -m # Commit with a message    
-    clean-b = "!sh -c 'git branch --merged | grep -vE \"^\\*|dev|staging|main|release|master|development|develop\" | grep -v \"${1:-^$}\" | xargs -I {} git branch -d {}' -"
-    clean-b-check = "!sh -c 'git branch --merged | grep -vE \"^\\*|dev|staging|main|release|master|development|develop\" | grep -v \"${1:-^$}\" | xargs -I {} echo {}' -"
+    # Lists local branches whose upstream remote branch has been deleted (i.e. PR was merged on GitHub and the branch was auto-deleted). Run this first as a dry-run.
+    clean-b-check = "!git fetch --prune && git branch -vv | grep ': gone]' | awk '{ if ($1==\"*\") print $2; else print $1 }' | grep -vxE '(main|master|develop|development|dev|staging|release)'"
+    # Force-deletes the branches identified by clean-b-check. Uses -D because squash/rebase-merged branches aren't seen as 'merged' by git, but the gone upstream confirms the PR was merged.
+    clean-b = "!git fetch --prune && git branch -vv | grep ': gone]' | awk '{ if ($1==\"*\") print $2; else print $1 }' | grep -vxE '(main|master|develop|development|dev|staging|release)' | xargs -I {} git branch -D {}"
     co = checkout  # Switch branches or restore files    
     cod = checkout . # Discard all changes in the working directory    
     f = fetch # Fetch updates from the remote repository    
