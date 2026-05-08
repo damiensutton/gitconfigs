@@ -21,8 +21,9 @@
     cod = checkout . # Discard all changes in the working directory    
     f = fetch # Fetch updates from the remote repository    
     l = log --graph --decorate --all --pretty=format:'%C(yellow)%h %C(cyan)%C(bold)%ad %C(green)%an%C(auto)%d %Creset%s' --date=short # Show a graphical log with detailed commit information    
-    ll = log --stat --no-merges # Show a detailed log with file changes, add -n for the last n commits only    
-    lt = "!git l -10" # Show the last 10 commits in the graphical log format    
+    ll = log --stat --no-merges # Show a detailed log with file changes, add -n for the last n commits only 
+    lo = log --oneline 
+    lt = "!git l -20" # Show the last 00 commits in the graphical log format    
     llt = "!git ll -10" # Show the last 10 commits with detailed changes    
     nb = checkout -b # Create a new branch and switch to it    
     p = pull # Pull changes from the remote repository    
@@ -51,7 +52,5 @@
     wtr = worktree remove    # Remove a worktree
     wts = worktree prune     # Prune old worktrees
     wtu = worktree update    # Update worktrees
-    # Create a new worktree as a sibling of the current repo, named <repo>.<suffix>, with a new branch off current HEAD. Branch name defaults to suffix; pass a second arg to override (e.g. git wtn BCDEV-456 feature/BCDEV-456).
-    wtn = "!f() { if [ -z \"$1\" ]; then echo \"Usage: git wtn <folder-suffix> [branch-name]\"; return 1; fi; root=$(git rev-parse --show-toplevel) || return 1; parent=$(dirname \"$root\"); name=$(basename \"$root\"); new_path=\"$parent/$name.$1\"; branch=\"${2:-$1}\"; git worktree add -b \"$branch\" \"$new_path\" && echo \"Worktree created: $new_path (branch: $branch)\"; }; f"
 
 
