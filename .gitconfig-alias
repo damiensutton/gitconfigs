@@ -23,7 +23,7 @@
     l = log --graph --decorate --all --pretty=format:'%C(yellow)%h %C(cyan)%C(bold)%ad %C(green)%an%C(auto)%d %Creset%s' --date=short # Show a graphical log with detailed commit information    
     ll = log --stat --no-merges # Show a detailed log with file changes, add -n for the last n commits only 
     lo = log --oneline 
-    lt = "!git l -20" # Show the last 00 commits in the graphical log format    
+    lt = "!git l -20" # Show the last 20 commits in the graphical log format    
     llt = "!git ll -10" # Show the last 10 commits with detailed changes    
     nb = checkout -b # Create a new branch and switch to it    
     p = pull # Pull changes from the remote repository    
